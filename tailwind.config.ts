@@ -63,14 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated color palette for music industry platform
+				// Reverting to the old purple-based color palette
 				music: {
-					primary: '#2D7DD2', // New blue primary
-					secondary: '#474973', // Deep indigo secondary
+					primary: '#9b87f5', // Purple primary
+					secondary: '#7E69AB', // Deep purple secondary
 					dark: '#1A1F2C',
-					light: '#EAF2F8', // Light blue
-					accent: '#F45D48', // Warm accent (for highlights/CTAs)
-					blue: '#3EACDC',
+					light: '#E5DEFF', // Light purple
+					accent: '#F97316', // Warm accent orange
+					blue: '#8B5CF6', // Vivid purple
 				}
 			},
 			borderRadius: {
