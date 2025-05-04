@@ -1,5 +1,5 @@
 
-import { ArrowRight, Guitar, Microphone, Music, Users } from "lucide-react";
+import { ArrowRight, Guitar, Mic, Music, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
               <div className="p-4 rounded-full bg-music-primary/10 mb-4">
-                <Microphone className="h-8 w-8 text-music-primary" />
+                <Mic className="h-8 w-8 text-music-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Find Talent & Opportunities</h3>
               <p className="text-gray-600 dark:text-gray-300">

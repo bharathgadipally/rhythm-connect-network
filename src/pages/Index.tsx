@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import ListingCard from "@/components/ListingCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Music, Guitar, Microphone } from "lucide-react";
+import { ArrowRight, Music, Guitar, Mic } from "lucide-react";
 import { mockListings } from "@/data/mockData";
 import { Link } from "react-router-dom";
 
@@ -79,7 +79,7 @@ const Index = () => {
               
               <div className="flex flex-col items-center text-center">
                 <div className="w-16 h-16 rounded-full bg-music-primary/20 flex items-center justify-center mb-4">
-                  <Microphone className="h-8 w-8 text-music-primary" />
+                  <Mic className="h-8 w-8 text-music-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Connect & Collaborate</h3>
                 <p className="text-gray-600 dark:text-gray-300">
