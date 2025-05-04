@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Reverting to the old purple-based color palette
+				// Violet and Orange color palette
 				music: {
-					primary: '#9b87f5', // Purple primary
-					secondary: '#7E69AB', // Deep purple secondary
+					primary: '#9b87f5', // Violet primary
+					secondary: '#7E69AB', // Deeper violet secondary
 					dark: '#1A1F2C',
-					light: '#E5DEFF', // Light purple
+					light: '#E5DEFF', // Light violet
 					accent: '#F97316', // Warm accent orange
 					blue: '#8B5CF6', // Vivid purple
 				}
