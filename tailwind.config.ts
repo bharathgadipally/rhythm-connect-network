@@ -63,14 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Violet and Orange color palette
+				// Custom colors for our music industry platform
 				music: {
-					primary: '#9b87f5', // Violet primary
-					secondary: '#7E69AB', // Deeper violet secondary
+					primary: '#9b87f5',
+					secondary: '#7E69AB',
 					dark: '#1A1F2C',
-					light: '#E5DEFF', // Light violet
-					accent: '#F97316', // Warm accent orange
-					blue: '#8B5CF6', // Vivid purple
+					light: '#D6BCFA',
+					orange: '#F97316',
+					blue: '#0EA5E9',
 				}
 			},
 			borderRadius: {
