@@ -18,13 +18,13 @@ const Hero = () => {
             RhythmConnect brings together artists, venues, and crews to create seamless event experiences. Post your needs, showcase your talents, and let the music happen.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild className="bg-music-primary hover:bg-music-secondary text-white py-6 px-8 rounded-xl text-lg transition-all duration-300 orange-glow">
+            <Button asChild className="bg-music-primary hover:bg-music-primary/90 text-white py-6 px-8 rounded-xl text-lg transition-all duration-300 blue-glow">
               <Link to="/dashboard">
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="py-6 px-8 rounded-xl text-lg border-music-primary text-music-primary hover:bg-music-primary/10 transition-all duration-300 purple-glow">
+            <Button asChild variant="outline" className="py-6 px-8 rounded-xl text-lg border-music-primary text-music-primary hover:bg-music-primary/10 transition-all duration-300 accent-glow">
               <Link to="/listings">
                 Browse Listings
               </Link>
@@ -69,8 +69,8 @@ const Hero = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-music-orange/5 rounded-full filter blur-3xl" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-music-blue/5 rounded-full filter blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-music-blue/5 rounded-full filter blur-3xl" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-music-accent/5 rounded-full filter blur-3xl" />
     </div>
   );
 };

@@ -63,14 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for our music industry platform
+				// Updated color palette for music industry platform
 				music: {
-					primary: '#9b87f5',
-					secondary: '#7E69AB',
+					primary: '#2D7DD2', // New blue primary
+					secondary: '#474973', // Deep indigo secondary
 					dark: '#1A1F2C',
-					light: '#D6BCFA',
-					orange: '#F97316',
-					blue: '#0EA5E9',
+					light: '#EAF2F8', // Light blue
+					accent: '#F45D48', // Warm accent (for highlights/CTAs)
+					blue: '#3EACDC',
 				}
 			},
 			borderRadius: {
