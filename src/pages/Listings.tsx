@@ -4,11 +4,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ListingCard from "@/components/ListingCard";
 import ListingSearch from "@/components/ListingSearch";
+import ListingsMap from "@/components/ListingsMap";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { mockListings } from "@/data/mockData";
 import { Listing } from "@/types";
-import { Plus } from "lucide-react";
+import { Plus, Map, List } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface SearchParams {
@@ -21,6 +22,7 @@ interface SearchParams {
 const Listings = () => {
   const [activeTab, setActiveTab] = useState<string>("all");
   const [filteredListings, setFilteredListings] = useState<Listing[]>(mockListings);
+  const [viewMode, setViewMode] = useState<"list" | "map">("list");
   
   // Filter listings based on the active tab
   useEffect(() => {
@@ -72,6 +74,37 @@ const Listings = () => {
     setFilteredListings(filtered);
   };
 
+  // Function to render content based on listings and view mode
+  const renderContent = () => {
+    if (filteredListings.length === 0) {
+      return (
+        <div className="text-center py-16">
+          <p className="text-gray-500 dark:text-gray-400 mb-4 text-xl">
+            No listings match your search criteria.
+          </p>
+          <Button onClick={() => {
+            setActiveTab("all");
+            setFilteredListings(mockListings);
+          }}>
+            Reset Search
+          </Button>
+        </div>
+      );
+    }
+    
+    if (viewMode === "map") {
+      return <ListingsMap listings={filteredListings} />;
+    }
+    
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredListings.map((listing) => (
+          <ListingCard key={listing.id} listing={listing} />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -104,79 +137,36 @@ const Listings = () => {
             <ListingSearch onSearch={handleSearch} />
           </div>
           
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="mb-6">
-              <TabsTrigger value="all">All Listings</TabsTrigger>
-              <TabsTrigger value="needs">Needs</TabsTrigger>
-              <TabsTrigger value="offers">Offers</TabsTrigger>
-            </TabsList>
+          <div className="flex justify-between items-center mb-6">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-auto">
+              <TabsList>
+                <TabsTrigger value="all">All Listings</TabsTrigger>
+                <TabsTrigger value="needs">Needs</TabsTrigger>
+                <TabsTrigger value="offers">Offers</TabsTrigger>
+              </TabsList>
+            </Tabs>
             
-            <TabsContent value="all">
-              {filteredListings.length === 0 ? (
-                <div className="text-center py-16">
-                  <p className="text-gray-500 dark:text-gray-400 mb-4 text-xl">
-                    No listings match your search criteria.
-                  </p>
-                  <Button onClick={() => {
-                    setActiveTab("all");
-                    setFilteredListings(mockListings);
-                  }}>
-                    Reset Search
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredListings.map((listing) => (
-                    <ListingCard key={listing.id} listing={listing} />
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-            
-            <TabsContent value="needs">
-              {filteredListings.length === 0 ? (
-                <div className="text-center py-16">
-                  <p className="text-gray-500 dark:text-gray-400 mb-4 text-xl">
-                    No needs match your search criteria.
-                  </p>
-                  <Button onClick={() => {
-                    setActiveTab("needs");
-                    setFilteredListings(mockListings.filter(l => l.type === "need"));
-                  }}>
-                    Reset Search
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredListings.map((listing) => (
-                    <ListingCard key={listing.id} listing={listing} />
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-            
-            <TabsContent value="offers">
-              {filteredListings.length === 0 ? (
-                <div className="text-center py-16">
-                  <p className="text-gray-500 dark:text-gray-400 mb-4 text-xl">
-                    No offers match your search criteria.
-                  </p>
-                  <Button onClick={() => {
-                    setActiveTab("offers");
-                    setFilteredListings(mockListings.filter(l => l.type === "offer"));
-                  }}>
-                    Reset Search
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredListings.map((listing) => (
-                    <ListingCard key={listing.id} listing={listing} />
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-          </Tabs>
+            <div className="flex border rounded-lg overflow-hidden">
+              <Button
+                variant={viewMode === "list" ? "default" : "ghost"}
+                className={`rounded-none ${viewMode === "list" ? "bg-music-primary" : ""}`}
+                onClick={() => setViewMode("list")}
+              >
+                <List className="h-4 w-4 mr-1" />
+                List
+              </Button>
+              <Button
+                variant={viewMode === "map" ? "default" : "ghost"}
+                className={`rounded-none ${viewMode === "map" ? "bg-music-primary" : ""}`}
+                onClick={() => setViewMode("map")}
+              >
+                <Map className="h-4 w-4 mr-1" />
+                Map
+              </Button>
+            </div>
+          </div>
+          
+          {renderContent()}
         </div>
       </main>
       
