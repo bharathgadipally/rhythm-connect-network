@@ -30,6 +30,12 @@ export interface Listing {
   skills?: string[];
   genres?: string[];
   createdAt: string;
+  // Adding the missing properties
+  eventType?: string;
+  duration?: string;
+  audienceSize?: string;
+  experienceLevel?: string;
+  equipmentRequired?: boolean;
 }
 
 export interface Bid {
