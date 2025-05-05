@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Listings from "./pages/Listings";
 import ListingDetail from "./pages/ListingDetail";
 import Matches from "./pages/Matches";
+import MatchDetail from "./pages/MatchDetail";
 import CreateListing from "./pages/CreateListing";
 import Login from "./pages/Login";
 import RegisterIndividual from "./pages/RegisterIndividual";
@@ -56,6 +57,11 @@ const App = () => (
             <Route path="/matches" element={
               <ProtectedRoute>
                 <Matches />
+              </ProtectedRoute>
+            } />
+            <Route path="/matches/:id" element={
+              <ProtectedRoute>
+                <MatchDetail />
               </ProtectedRoute>
             } />
             

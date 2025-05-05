@@ -54,3 +54,13 @@ export interface Bid {
   createdAt: string;
   isAutomatic: boolean;
 }
+
+export interface Message {
+  id: string;
+  matchId: string;
+  senderId: string;
+  senderName: string;
+  senderAvatar?: string;
+  text: string;
+  timestamp: string;
+}
