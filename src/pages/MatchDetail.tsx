@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { format } from "date-fns";
+import { format, isValid, parseISO } from "date-fns";
 import { ArrowLeft, Calendar, Clock, MapPin, Send } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
@@ -18,6 +18,20 @@ import { mockBids, mockListings } from "@/data/mockData";
 import { useAuth } from "@/contexts/AuthContext";
 import { formatDistanceToNow } from "date-fns";
 import MessageList from "@/components/MessageList";
+
+// Helper function to safely format dates
+const safeFormatDate = (dateStr: string | undefined, formatStr: string) => {
+  if (!dateStr) return "N/A";
+  
+  try {
+    const date = parseISO(dateStr);
+    if (!isValid(date)) return "Invalid date";
+    return format(date, formatStr);
+  } catch (error) {
+    console.error("Date formatting error:", error);
+    return "Invalid date";
+  }
+};
 
 const MatchDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -94,7 +108,13 @@ const MatchDetail = () => {
     );
   }
   
-  const timeSince = formatDistanceToNow(new Date(bid.createdAt), { addSuffix: true });
+  let timeSince = "";
+  try {
+    timeSince = formatDistanceToNow(parseISO(bid.createdAt), { addSuffix: true });
+  } catch (error) {
+    console.error("Error formatting time distance:", error);
+    timeSince = "some time ago";
+  }
   
   const handleSendMessage = () => {
     if (!message.trim()) return;
@@ -178,12 +198,12 @@ const MatchDetail = () => {
                       
                       <div className="flex items-center text-sm">
                         <Calendar className="h-4 w-4 mr-2 text-gray-500" />
-                        <span>{format(new Date(needListing.dateTime), "PPP")}</span>
+                        <span>{safeFormatDate(needListing.dateTime, "PPP")}</span>
                       </div>
                       
                       <div className="flex items-center text-sm">
                         <Clock className="h-4 w-4 mr-2 text-gray-500" />
-                        <span>{format(new Date(needListing.dateTime), "p")}</span>
+                        <span>{safeFormatDate(needListing.dateTime, "p")}</span>
                       </div>
                       
                       <div className="font-medium text-sm">Rate: {needListing.rate}</div>
@@ -234,12 +254,12 @@ const MatchDetail = () => {
                       
                       <div className="flex items-center text-sm">
                         <Calendar className="h-4 w-4 mr-2 text-gray-500" />
-                        <span>{format(new Date(offerListing.dateTime), "PPP")}</span>
+                        <span>{safeFormatDate(offerListing.dateTime, "PPP")}</span>
                       </div>
                       
                       <div className="flex items-center text-sm">
                         <Clock className="h-4 w-4 mr-2 text-gray-500" />
-                        <span>{format(new Date(offerListing.dateTime), "p")}</span>
+                        <span>{safeFormatDate(offerListing.dateTime, "p")}</span>
                       </div>
                       
                       <div className="font-medium text-sm">Rate: {offerListing.rate}</div>
