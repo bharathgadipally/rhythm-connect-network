@@ -7,6 +7,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Listing } from "@/types";
 import { formatDistanceToNow } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ListingCardProps {
   listing: Listing;
@@ -30,8 +38,41 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, showActions = true }
   
   const timeSince = formatDistanceToNow(new Date(listing.createdAt), { addSuffix: true });
   
+  // Default placeholder images if no images are provided
+  const defaultImages = [
+    "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  ];
+  
+  // Use listing images if available, otherwise use defaults
+  const images = listing.images && listing.images.length > 0 ? listing.images : defaultImages;
+  
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all">
+      <div className="relative">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <AspectRatio ratio={16/9}>
+                  <img
+                    src={image}
+                    alt={`${listing.title} - image ${index + 1}`}
+                    className="object-cover w-full h-full rounded-t-lg"
+                  />
+                </AspectRatio>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {images.length > 1 && (
+            <>
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+            </>
+          )}
+        </Carousel>
+      </div>
+      
       <CardHeader className={`pb-3 ${isOffer ? "bg-music-primary/10" : "bg-music-orange/10"}`}>
         <div className="flex items-center justify-between">
           <Badge variant={isOffer ? "default" : "outline"} className={isOffer ? "bg-music-primary" : "text-music-orange border-music-orange"}>

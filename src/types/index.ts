@@ -1,4 +1,3 @@
-
 export type UserType = 'individual' | 'company';
 
 export interface User {
@@ -30,7 +29,9 @@ export interface Listing {
   skills?: string[];
   genres?: string[];
   createdAt: string;
-  // Adding the missing properties
+  // Adding images array for the carousel
+  images?: string[];
+  // Other properties
   eventType?: string;
   duration?: string;
   audienceSize?: string;
