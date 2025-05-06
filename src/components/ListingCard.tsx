@@ -47,29 +47,28 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, showActions = true }
   
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all h-full flex flex-col">
-      <div className="relative">
-        <Carousel className="w-full">
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <AspectRatio ratio={16/9} className="max-h-[180px]">
-                  <img
-                    src={image}
-                    alt={`${listing.title} - image ${index + 1}`}
-                    className="object-cover w-full h-full rounded-t-lg"
-                  />
-                </AspectRatio>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          {images.length > 1 && (
-            <>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
-            </>
-          )}
-        </Carousel>
-      </div>
+      {/* Removed the 'relative' div wrapper that was causing the gap */}
+      <Carousel className="w-full">
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem key={index}>
+              <AspectRatio ratio={16/9} className="max-h-[180px]">
+                <img
+                  src={image}
+                  alt={`${listing.title} - image ${index + 1}`}
+                  className="object-cover w-full h-full"
+                />
+              </AspectRatio>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        {images.length > 1 && (
+          <>
+            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+          </>
+        )}
+      </Carousel>
       
       <CardHeader className={`pb-2 pt-3 ${isOffer ? "bg-music-primary/10" : "bg-music-orange/10"}`}>
         <div className="flex items-center justify-between mb-1">
