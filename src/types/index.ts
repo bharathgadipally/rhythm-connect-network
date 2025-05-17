@@ -1,3 +1,4 @@
+
 export type UserType = 'individual' | 'company';
 
 export interface User {
@@ -51,7 +52,7 @@ export interface Bid {
   offerUserName?: string;
   needUserAvatar?: string;
   offerUserAvatar?: string;
-  status: 'pending' | 'accepted' | 'rejected';
+  status: 'initial' | 'pending' | 'accepted' | 'rejected' | 'contracted';
   createdAt: string;
   isAutomatic: boolean;
 }
