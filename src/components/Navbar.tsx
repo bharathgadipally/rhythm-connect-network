@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Bell, Menu, Search, X } from "lucide-react";
+import { Bell, Menu, Search, X, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
@@ -28,9 +27,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center space-x-2">
+              <div className="p-2 rounded-lg bg-gradient-to-r from-music-primary to-music-secondary">
+                <Music className="h-6 w-6 text-white" />
+              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-music-primary to-music-secondary bg-clip-text text-transparent">
-                RhythmConnect
+                EvenioPro
               </span>
             </Link>
           </div>

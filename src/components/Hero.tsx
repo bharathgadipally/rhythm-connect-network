@@ -19,22 +19,10 @@ const Hero = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* EvenioPro Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-music-primary to-music-secondary bg-clip-text text-transparent">
-                EvenioPro
-              </h1>
-            </div>
-          </div>
-          
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             <span className="block">We Make It Happen</span>
             <span className="block text-music-primary">Bringing life to the entertainment industry in the 21st century</span>
           </h1>
-          <p className="mt-6 max-w-lg mx-auto text-xl text-gray-200 sm:max-w-xl">
-            EvenioPro brings together artists, venues, and crews to create seamless event experiences. Post your needs, showcase your talents, and let the music happen.
-          </p>
         </div>
         
         {/* Features */}
@@ -68,6 +56,36 @@ const Hero = () => {
               <p className="text-gray-200">
                 Our system automatically matches your needs with relevant offers to save you time and effort.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Images Section */}
+        <div className="mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" 
+                alt="Entertainment professional working" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" 
+                alt="Music equipment and technology" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80" 
+                alt="Software development for entertainment" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30" />
             </div>
           </div>
         </div>
