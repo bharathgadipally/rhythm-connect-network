@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
@@ -138,20 +137,11 @@ const Index = () => {
         {/* Newsletter Section */}
         <Newsletter />
         
-        {/* Contact Form Section with Image */}
+        {/* Contact Form Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="max-w-2xl mx-auto">
               <ContactForm />
-              
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80" 
-                  alt="Software development for entertainment" 
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20" />
-              </div>
             </div>
           </div>
         </section>

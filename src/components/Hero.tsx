@@ -17,11 +17,11 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/60" />
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             <span className="block">We Make It Happen</span>
-            <span className="block text-music-primary">Bringing life to the entertainment industry in the 21st century</span>
+            <span className="block text-music-primary text-2xl sm:text-3xl md:text-4xl mt-4">Bringing life to the entertainment industry in the 21st century</span>
           </h1>
         </div>
       </div>
