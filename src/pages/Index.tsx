@@ -2,16 +2,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-import ListingCard from "@/components/ListingCard";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Music, Guitar, Mic } from "lucide-react";
-import { mockListings } from "@/data/mockData";
-import { Link } from "react-router-dom";
+import Newsletter from "@/components/Newsletter";
+import ContactForm from "@/components/ContactForm";
+import { Music, Guitar, Mic } from "lucide-react";
 
 const Index = () => {
-  // Get 3 featured listings (mix of needs and offers)
-  const featuredListings = mockListings.slice(0, 3);
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -19,40 +14,13 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         
-        {/* Featured Listings Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Featured Listings</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Browse our latest opportunities and talent offerings in the music industry
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredListings.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
-              ))}
-            </div>
-            
-            <div className="mt-12 text-center">
-              <Button asChild className="bg-music-primary hover:bg-music-secondary">
-                <Link to="/listings">
-                  View All Listings
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-        
         {/* How It Works Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">How It Works</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Simple steps to connect with the perfect match for your musical needs
+                Simple steps to connect with the perfect match for your entertainment needs
               </p>
             </div>
             
@@ -90,21 +58,21 @@ const Index = () => {
           </div>
         </section>
         
-        {/* CTA Section */}
+        {/* Our Company Ethos Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-music-primary/10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Match?</h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-              Whether you need talent or are offering your skills, join our community today and start connecting!
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-8">Our Company Ethos</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Our innovative web application for the entertainment industry redefines the relationship between performers and venues, creating unparalleled opportunities for collaboration and engagement. By leveraging advanced algorithms and a user-friendly interface, we seamlessly connect artists with the perfect platforms, ensuring that both performers and venues can thrive in a vibrant ecosystem. This groundbreaking approach not only streamlines the booking process but also fosters meaningful interactions that will transform the way events are produced and experienced. As we pave the way for a new era in entertainment, we are committed to enhancing accessibility, creativity, and success for all stakeholders involved.
             </p>
-            <Button asChild className="bg-music-primary hover:bg-music-secondary text-white py-6 px-10 rounded-xl text-lg transition-all duration-300">
-              <Link to="/dashboard">
-                Get Started Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
           </div>
         </section>
+        
+        {/* Newsletter Section */}
+        <Newsletter />
+        
+        {/* Contact Form Section */}
+        <ContactForm />
       </main>
       
       <Footer />

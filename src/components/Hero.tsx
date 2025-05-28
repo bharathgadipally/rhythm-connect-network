@@ -6,61 +6,66 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-music-primary/10 to-music-secondary/10 z-0" />
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{
+          backgroundImage: `url('/lovable-uploads/c909a5ef-0761-4074-9473-54d1744e6924.png')`,
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-            <span className="block">Connect, Create, Perform.</span>
-            <span className="block text-music-primary">Network for Musical Magic</span>
-          </h1>
-          <p className="mt-6 max-w-lg mx-auto text-xl text-gray-600 dark:text-gray-300 sm:max-w-xl">
-            RhythmConnect brings together artists, venues, and crews to create seamless event experiences. Post your needs, showcase your talents, and let the music happen.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild className="bg-music-primary hover:bg-music-secondary text-white py-6 px-8 rounded-xl text-lg transition-all duration-300 orange-glow">
-              <Link to="/dashboard">
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="py-6 px-8 rounded-xl text-lg border-music-primary text-music-primary hover:bg-music-primary/10 transition-all duration-300 purple-glow">
-              <Link to="/listings">
-                Browse Listings
-              </Link>
-            </Button>
+          {/* EvenioPro Logo */}
+          <div className="mb-8 flex justify-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-music-primary to-music-secondary bg-clip-text text-transparent">
+                EvenioPro
+              </h1>
+            </div>
           </div>
+          
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <span className="block">We Make It Happen</span>
+            <span className="block text-music-primary">Bringing life to the entertainment industry in the 21st century</span>
+          </h1>
+          <p className="mt-6 max-w-lg mx-auto text-xl text-gray-200 sm:max-w-xl">
+            EvenioPro brings together artists, venues, and crews to create seamless event experiences. Post your needs, showcase your talents, and let the music happen.
+          </p>
         </div>
         
         {/* Features */}
         <div className="mt-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="p-4 rounded-full bg-music-primary/10 mb-4">
+            <div className="flex flex-col items-center text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-white/20">
+              <div className="p-4 rounded-full bg-music-primary/20 mb-4">
                 <Mic className="h-8 w-8 text-music-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Find Talent & Opportunities</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h3 className="text-xl font-bold mb-2 text-white">Find Talent & Opportunities</h3>
+              <p className="text-gray-200">
                 Connect with skilled professionals or find your next gig in the music and art industry.
               </p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="p-4 rounded-full bg-music-primary/10 mb-4">
+            <div className="flex flex-col items-center text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-white/20">
+              <div className="p-4 rounded-full bg-music-primary/20 mb-4">
                 <Users className="h-8 w-8 text-music-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Network & Collaborate</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h3 className="text-xl font-bold mb-2 text-white">Network & Collaborate</h3>
+              <p className="text-gray-200">
                 Build your professional network and create meaningful collaborations with like-minded artists.
               </p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="p-4 rounded-full bg-music-primary/10 mb-4">
+            <div className="flex flex-col items-center text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-white/20">
+              <div className="p-4 rounded-full bg-music-primary/20 mb-4">
                 <Guitar className="h-8 w-8 text-music-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Smart Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h3 className="text-xl font-bold mb-2 text-white">Smart Matching</h3>
+              <p className="text-gray-200">
                 Our system automatically matches your needs with relevant offers to save you time and effort.
               </p>
             </div>

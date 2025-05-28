@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,10 +7,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-music-primary to-music-secondary bg-clip-text text-transparent">
-              RhythmConnect
+              EvenioPro
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Connecting the music and art industry through seamless networking.
+              Bringing life to the entertainment industry through seamless networking and collaboration.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-500 hover:text-music-primary">
@@ -68,7 +67,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
           <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-            &copy; {new Date().getFullYear()} RhythmConnect. All rights reserved.
+            &copy; {new Date().getFullYear()} EvenioPro. All rights reserved.
           </p>
         </div>
       </div>
