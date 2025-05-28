@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
@@ -50,62 +51,45 @@ const Index = () => {
           </div>
         </section>
         
-        {/* How It Works Section with Image */}
+        {/* How It Works Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-                <p className="text-xl text-gray-600 mb-8">
-                  Simple steps to connect with the perfect match for your entertainment needs
-                </p>
-                
-                <div className="space-y-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-music-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Guitar className="h-6 w-6 text-music-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Create Your Profile</h3>
-                      <p className="text-gray-600">
-                        Sign up as an individual or company and showcase your skills or company services
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-music-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Music className="h-6 w-6 text-music-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Post Needs & Offers</h3>
-                      <p className="text-gray-600">
-                        Create listings for what you need or what services you can provide
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-music-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Mic className="h-6 w-6 text-music-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">Connect & Collaborate</h3>
-                      <p className="text-gray-600">
-                        Get matched automatically or browse listings to find your perfect collaboration
-                      </p>
-                    </div>
-                  </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+              <p className="text-xl text-gray-600">
+                Simple steps to connect with the perfect match for your entertainment needs
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 rounded-2xl border border-gray-200">
+                <div className="w-16 h-16 rounded-full bg-music-primary/20 flex items-center justify-center mb-4">
+                  <Guitar className="h-8 w-8 text-music-primary" />
                 </div>
+                <h3 className="text-xl font-bold mb-4">Create Your Profile</h3>
+                <p className="text-gray-600">
+                  Sign up as an individual or company and showcase your skills or company services
+                </p>
               </div>
               
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" 
-                  alt="Entertainment professional working" 
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20" />
+              <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 rounded-2xl border border-gray-200">
+                <div className="w-16 h-16 rounded-full bg-music-primary/20 flex items-center justify-center mb-4">
+                  <Music className="h-8 w-8 text-music-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Post Needs & Offers</h3>
+                <p className="text-gray-600">
+                  Create listings for what you need or what services you can provide
+                </p>
+              </div>
+              
+              <div className="flex flex-col items-center text-center p-6 bg-white shadow-md hover:shadow-lg transition-all duration-300 rounded-2xl border border-gray-200">
+                <div className="w-16 h-16 rounded-full bg-music-primary/20 flex items-center justify-center mb-4">
+                  <Mic className="h-8 w-8 text-music-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Connect & Collaborate</h3>
+                <p className="text-gray-600">
+                  Get matched automatically or browse listings to find your perfect collaboration
+                </p>
               </div>
             </div>
           </div>
